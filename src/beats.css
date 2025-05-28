@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+}
+  .bottom-nav {
+      padding: 8px 0; /* ナビゲーションのパディング調整 */
+      width: 100%; /* 幅を100%にして画面全体を使用 */
+  }
+
+  .nav-item {
+      font-size: 10px; /* ナビゲーションアイテムのサイズを小さく */
+  }
+
+  .nav-icon {
+      width: 20px; /* アイコンのサイズを調整 */
+      height: 20px; /* アイコンのサイズを調整 */
+  }
+
+
+/* スマホ向けのスタイル */
+@media (max-width: 768px) {
+  .beats-container {
+      max-width: 100%; /* スマホ用に最大幅を変更 */
+      padding-bottom: 60px; /* スマホナビゲーションの高さに応じた調整 */
+      min-height: calc(100vh - 60px); /* スマホのナビゲーション高さ */
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 22px 0 16px 0;
+}
+
+.back-arrow {
+  position: absolute;
+  left: 22px;
+  font-size: 22px;
+  top: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header .title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #bc6726;
+  border-radius: 16px;
+  margin: 0 18px 18px 18px;
+  padding: 0 12px;
+  height: 44px;
+}
+
+.search-icon {
+  font-size: 19px;
+  color: #fff;
+  margin-right: 9px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 17px;
+  color: #fff;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.tag-bar {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background: #3d2a20;
+  color: #fff;
+  padding: 7px 17px;
+  border-radius: 22px;
+  font-size: 15px;
+  margin-right: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  opacity: 0.8;
+}
+.tag.active {
+  background: #21140b;
+  color: #fff;
+  opacity: 1;
+}
+
+.beat-list {
+  margin-top: 6px;
+  margin-left: 13px;
+}
+
+.beat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.beat-item img {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.beat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.beat-title {
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+/* ボトムナビ */
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333; /* ナビゲーションバーの背景色 */
+  padding: 10px 0;
+  position: fixed; /* 画面下に固定 */
+  bottom: 0; /* 画面の下部に配置 */
+  left: 0; /* 左端に固定 */
+  right: 0; /* 右端に固定 */
+  width: 100%; /* 幅を100%に設定 */
+  z-index: 100; /* 他の要素の上に表示 */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* デフォルト色 (白) */
+  font-size: 12px;
+  text-decoration: none;
+  flex: 1;
+  transition: color 0.3s; /* スムーズな色の変更 */
+}
+
+.nav-item.active, /* アクティブアイテム */
+.nav-item:active, /* クリック時の色変更 */
+.nav-item:hover { /* ホバー時の色変更 */
+  color: #c05b24; /* アクティブ色 (赤) */
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}
+
+
+  .header .title {
+      font-size: 20px; /* 小さいタイトルサイズ */
+  }
+
+  .search-bar {
+      margin: 0 10px 10px; /* マージンを調整 */
+      padding: 0 8px; /* パディングを調整 */
+      height: 40px; /* 高さを調整 */
+  }
+
+  .search-icon {
+      font-size: 16px; /* アイコンサイズを調整 */
+  }
+
+  .search-bar input {
+      font-size: 15px; /* 入力フィールドのフォントサイズを調整 */
+  }
+
+  .tag {
+      padding: 5px 12px; /* タグのパディングを小さく */
+      font-size: 14px; /* タグのフォントサイズを調整 */
+  }
+
+  .beat-item {
+      margin-bottom: 15px; /* アイテム間のスペースを減らす */
+  }
+
+  .beat-item img {
+      width: 46px; /* アイテム画像のサイズを小さく */
+      height: 46px; /* アイテム画像の高さを調整 */
+  }
+
+  .beat-title {
+      font-size: 15px; /* ビートタイトルサイズを調整 */
+  }
+
+  .bottom-nav {
+      padding: 8px 0; /* ナビゲーションのパディングを調整 */
+  }
+
+  .nav-item {
+      font-size: 10px; /* ナビゲーションアイテムのサイズを小さく */
+  }
+
+  .nav-icon {
+      width: 20px; /* アイコンのサイズを調整 */
+      height: 20px; /* アイコンのサイズを調整 */
+  }
