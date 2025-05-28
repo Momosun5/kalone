@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  background: #0e0e0e;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 430px;
+  margin: 0 auto;
+  background: #171717;
+}
+
+.header {
+  text-align: center;
+  background: #0e0e0e;
+  padding-bottom: 32px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.logo-section {
+  margin-top: -30px;
+}
+
+.logo {
+  width: 220px;
+  margin: 0 auto;
+  display: block;
+}
+
+.subtitle {
+  margin-top: 8px;
+  letter-spacing: 1px;
+  font-size: 17px;
+  color: #c7c7c7;
+}
+
+.profile-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.button {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button.orange {
+  background: #bc6726;
+  color: #fff;
+}
+
+.button.gray {
+  background: #eaeaea;
+  color: #191919;
+}
+
+.section {
+  margin: 36px 0 0 0;
+  padding: 0 22px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: bold;
+
+}
+
+.insta-posts, .beats, .merchandise {
+  display: flex;
+  gap: 16px; /* 各アイテム間のスペースを設定 */
+  overflow: hidden; /* スクロールバーを非表示に */
+  position: relative; /* 相対位置指定 */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease; /* スライド移動にアニメーションを適用 */
+  will-change: transform; /* パフォーマンス向上のため */
+}
+
+.insta-posts img, .beats .beat img, .merchandise .merch img {
+  border-radius: 10px;
+  width: 150px;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.beats .beat, .merchandise .merch {
+  min-width: 150px;
+  text-align: center;
+}
+
+.beats .beat img, .merchandise .merch img {
+  width: 120px;
+  height: 120px;
+}
+
+.beats .beat span, .merchandise .merch span {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #dedede;
+}
+
+/* スライダーコントロールボタンのスタイル */
+.slider-button {
+  position: absolute; /* 絶対位置指定 */
+  top: 50%; /* 垂直方向中央に配置 */
+  transform: translateY(-50%); /* 中心に合わせる */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10; /* 上に表示 */
+}
+
+.slider-button.left {
+  left: 10px; /* 左ボタンの位置 */
+}
+
+.slider-button.right {
+  right: 10px; /* 右ボタンの位置 */
+}
+
+.collab-section {
+  text-align: center;
+  margin: 40px 0 80px 0;
+}
+
+.collab-section p {
+  font-size: 18px;
+  color: #fafafae0;
+  margin-bottom: 13px;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333; /* ナビゲーションバーの背景色 */
+  padding: 10px 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* デフォルト色 (白) */
+  font-size: 12px;
+  text-decoration: none;
+  flex: 1;
+  transition: color 0.3s; /* スムーズな色の変更 */
+}
+
+.nav-item.active, /* アクティブアイテム */
+.nav-item:active, /* クリック時の色変更 */
+.nav-item:hover { /* ホバー時の色変更 */
+  color: #c05b24; /* アクティブ色 (赤) */
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #2d1c14;
+  color: #fff;
+}
+
+.merch-container {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #2d1c14;
+  padding-bottom: 80px; /* ナビ重なり防止 */
+}
+
+.merch-header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 25px 0 18px 0;
+}
+
+.merch-grid {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  align-items: center; /* 中央寄せ */
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.merch-item {
+  background: #23160d;
+  border-radius: 15px;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0 15px 0;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s;
+}
+.merch-item:active {
+  box-shadow: 0 2px 12px #bc672655;
+}
+
+.merch-item img {
+  width: 100%;
+  max-height: calc(100vh - 150px); /* 画面の高さからヘッダー・フッター分を引いた分 */
+  object-fit: contain; /* 画像が縦横比維持しつつ収まる */
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.merch-name {
+  text-align: left;
+  width: 90%;
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+
+.merch-stock {
+  width: 90%;
+  font-size: 14px;
+  color: #bc6726;
+  text-align: left;
+}
+
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333; /* ナビゲーションバーの背景色 */
+  padding: 10px 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* デフォルト色 (白) */
+  font-size: 12px;
+  text-decoration: none;
+  flex: 1;
+  transition: color 0.3s; /* スムーズな色の変更 */
+}
+
+.nav-item.active, /* アクティブアイテム */
+.nav-item:active, /* クリック時の色変更 */
+.nav-item:hover { /* ホバー時の色変更 */
+  color: #c05b24; /* アクティブ色 (赤) */
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}

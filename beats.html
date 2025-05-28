@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Beats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="beats.css">
+</head>
+<body>
+  <div class="beats-container">
+    <!-- ヘッダー -->
+    <div class="header">
+      <span class="title">Beats</span>
+    </div>
+    <!-- 検索バー -->
+    <div class="search-bar">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" placeholder="Search">
+    </div>
+    <!-- タグ（Allのみ仮実装） -->
+    <div class="tag-bar">
+      <span class="tag active">All</span>
+    </div>
+    <!-- ビートリスト -->
+    <div class="beat-list">
+      <div class="beat-item">
+        <img src="beat1.jpg" alt="Beat 1">
+        <div class="beat-info">
+          <span class="beat-title">Beat 1</span>
+        
+        </div>
+      </div>
+      <div class="beat-item">
+        <img src="beat2.jpg" alt="Beat 2">
+        <div class="beat-info">
+          <span class="beat-title">Beat 2</span>
+        </div>
+      </div>
+      <div class="beat-item">
+        <img src="beat3.jpg" alt="Beat 3">
+        <div class="beat-info">
+          <span class="beat-title">Beat 3</span>
+        </div>
+      </div>
+      <div class="beat-item">
+        <img src="beat4.jpg" alt="Beat 4">
+        <div class="beat-info">
+          <span class="beat-title">Beat 4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+   <nav class="bottom-nav">
+  <a href="index.html" class="nav-item"> <!-- アクティブなリンク -->
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
+    <span>HOME</span>
+  </a>
+  <a href="beats.html" class="nav-item active"> <!-- 他のナビゲーションアイテム -->
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg>
+    <span>Beats</span>
+  </a>
+  <a href="merch.html" class="nav-item">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="20.5" r="1"/><circle cx="18" cy="20.5" r="1"/><path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1"/></svg>
+    <span>Merch</span>
+  </a>
+  <a href="contact.html" class="nav-item">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    <span>Contact</span>
+  </a>
+</nav>
+</body>
+</html>
+
