@@ -5,6 +5,8 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #2d1c14;
   color: #fff;
+   min-height: 100vh; /*画面の高さに基づいて最低高さを設定*/
+  box-sizing: border-box;
 }
 
 .merch-container {
@@ -13,6 +15,7 @@ body {
   min-height: 100vh;
   background: #2d1c14;
   padding-bottom: 80px; /* ナビ重なり防止 */
+min-height: 100vh; /*コンテンツが画面全部を埋める場合に必要なら */
 }
 
 .merch-header {

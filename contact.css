@@ -5,15 +5,17 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #2d1c14;
+  background: #000000;
   color: #fff;
+  min-height: 100vh; /*画面の高さに基づいて最低高さを設定*/
+  box-sizing: border-box;
 }
 
 .contact-container {
   max-width: 430px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #2d1c14;
+  background: #000000;
   padding-bottom: 80px;
 }
 .contact-header {

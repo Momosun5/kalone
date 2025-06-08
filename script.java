@@ -26,4 +26,17 @@ document.querySelector('.slider-button.right').addEventListener('click', functio
     slide('next');
 });
 
+const btnLeft = document.querySelector('.slider-button.left');
+const btnRight = document.querySelector('.slider-button.right');
+const slider = document.querySelector('.slider');
+let currentTranslateX = 0;
 
+btnLeft.onclick = () => {
+  currentTranslateX -= 150; // アイテム幅に合わせて調整
+  slider.style.transform = `translateX(${currentTranslateX}px)`;
+};
+
+btnRight.onclick = () => {
+  currentTranslateX += 150;
+  slider.style.transform = `translateX(${currentTranslateX}px)`;
+};
