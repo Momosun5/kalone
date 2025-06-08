@@ -6,46 +6,69 @@ body {
   background: #0e0e0e;
   margin: 0;
   padding: 0;
-  min-height: 100vh; /*画面の高さに基づいて最低高さを設定*/
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
+/* 全体コンテナ */
 .container {
-  max-width: 430px;
+  max-width: 1200px;        /* 初期最大幅 */
+  width: 100%;              /* PC横幅いっぱいに */
   margin: 0 auto;
   background: #171717;
   min-height: 100vh;
+  padding: 20px;
 }
 
+/* PC横幅での最大化設定：追加 */
+@media (min-width: 769px) {
+  .container {
+    width: 100%;            /* 横幅全体に */
+    max-width: none;        /* 制限なし */
+  }
+  /* フッターやナビも横幅いっぱいに */
+  .bottom-nav {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* ヘッダー部分 */
 .header {
   text-align: center;
   background: #0e0e0e;
-  padding-bottom: 32px;
+  padding: 20px 0;
+  overflow: visible;
 }
 
+/* ヒーロー画像 */
 .profile-photo {
   width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.logo-section {
-  margin-top: -30px;
-}
-
-.logo {
-  width: 220px;
-  margin: 0 auto;
+  max-height: 600px; /* 高さ調整 */
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
+/* ロゴ画像大きく */
+.logo {
+  width: 400px; 
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* サブタイトル */
 .subtitle {
   margin-top: 8px;
   letter-spacing: 1px;
-  font-size: 17px;
+  font-size: 20px;
   color: #c7c7c7;
 }
 
+/* プロフィールアクション */
 .profile-actions {
   margin-top: 16px;
   display: flex;
@@ -59,127 +82,185 @@ body {
   border-radius: 22px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
-
 .button.orange {
   background: #bc6726;
   color: #fff;
 }
-
 .button.gray {
   background: #eaeaea;
   color: #191919;
 }
 
+/* セクション */
 .section {
   margin: 36px 0 0 0;
   padding: 0 22px;
 }
-
 .section h2 {
   text-align: center;
   margin-bottom: 14px;
   font-size: 22px;
   font-weight: bold;
-
+}
+/* Instagram Postsのコンテナ */
+.insta-posts {
+  position: relative;            /* 矢印位置調整用 */
+  display: flex !important;      /* 横並びに横に並べる強制 */
+  justify-content: center !important; /* 横並び中央寄せ */
+  align-items: center !important;     /* 縦も中央 */
+  gap: 16px;                     /* 各アイテム間の間隔 */
+  width: 100%;                   /* 横幅いっぱいに */
+  flex-wrap: nowrap;             /* 折り返さない */
+  margin: 0 auto;                /* 位置調整 (必要に応じて) */
 }
 
-.insta-posts, .beats, .merchandise {
-  display: flex;
-  gap: 16px; /* 各アイテム間のスペースを設定 */
-  overflow: hidden; /* スクロールバーを非表示に */
-  position: relative; /* 相対位置指定 */
-}
-
+/* .sliderは横並びにしたいなら設定必要 */
 .slider {
-  display: flex;
-  transition: transform 0.5s ease; /* スライド移動にアニメーションを適用 */
-  will-change: transform; /* パフォーマンス向上のため */
+  display: flex;                   /* 子アイテムを横並び */
+  flex-direction: row;             /* 横方向 */
+  align-items: center;             /* 縦も中央 */
+  gap: 16px;
 }
 
-.insta-posts img, .beats .beat img, .merchandise .merch img {
-  border-radius: 10px;
-  width: 150px;
-  height: 170px;
-  object-fit: cover;
+/* 画像のみ横並び＋中央寄せ */
+.post-image {
   display: block;
+  margin: 0 auto;                 /* 横方向中央寄せ */
+  width: 150px;                   /* 横幅調整 */
+  height: 170px;                  /* 高さ調整 */
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Instagram・Beats・Merch parentを横並び＆中央寄せ */
+.insta-posts,
+.beats,
+.merchandise {
+  display: flex;                 /* 横並び */
+  justify-content: center;       /* 横並び中央寄せ */
+  align-items: center;           /* 縦も中央揃え */
+  gap: 16px;
+  width: 100%;                   /* 横幅いっぱい */
+  overflow: hidden;
+  position: relative;            /* 矢印位置調整用 */
+  flex-wrap: nowrap;             /* 必要に応じて折り返さない */
 }
 
-.beats .beat, .merchandise .merch {
+/* 画像だけ横並び＆中央寄せ設定 */
+.insta-posts .post-image,
+.beats .beat img,
+.merchandise .merch img {
+  display: block;
+  margin: 0 auto;               /* 横寄せ */
+  border-radius: 10px;
+  width: 150px;                 /* 横幅調整 */
+  height: 170px;                /* 高さ調整 */
+  object-fit: cover;
+}
+
+/* .beat, .merchのテキスト内部も中央寄せ */
+.beats .beat,
+.merchandise .merch {
+  display: flex;
+  flex-direction: column;       /* 縦並びでも中央 */
+  align-items: center;
   min-width: 150px;
   text-align: center;
 }
 
-.beats .beat img, .merchandise .merch img {
-  width: 120px;
-  height: 120px;
-}
-
-.beats .beat span, .merchandise .merch span {
-  display: block;
-  margin-top: 10px;
-  font-size: 15px;
-  color: #dedede;
-}
-
-/* スライダーコントロールボタンのスタイル */
+/* 矢印ボタン */
 .slider-button {
-  position: absolute; /* 絶対位置指定 */
-  top: 50%; /* 垂直方向中央に配置 */
-  transform: translateY(-50%); /* 中心に合わせる */
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
   border: none;
   padding: 10px;
   cursor: pointer;
-  z-index: 10; /* 上に表示 */
+  z-index: 10;
 }
-
 .slider-button.left {
-  left: 10px; /* 左ボタンの位置 */
+  left: 10px;
 }
-
 .slider-button.right {
-  right: 10px; /* 右ボタンの位置 */
+  right: 10px;
 }
 
+/* コラボセクション */
 .collab-section {
   text-align: center;
   margin: 40px 0 80px 0;
 }
-
 .collab-section p {
   font-size: 18px;
   color: #fafafae0;
   margin-bottom: 13px;
 }
 
+/* フッター＆ナビ */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
-  background-color: #333; /* ナビゲーションバーの背景色 */
+  background-color: #333;
   padding: 10px 0;
+  width: 100%; /* 横幅いっぱい */
+  max-width: none; /* 制限解除 */
+  margin: 0 auto;
 }
 
+/* ナビリンク */
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff; /* デフォルト色 (白) */
+  color: #fff;
   font-size: 12px;
   text-decoration: none;
   flex: 1;
-  transition: color 0.3s; /* スムーズな色の変更 */
+  transition: color 0.3s;
 }
-
-.nav-item.active, /* アクティブアイテム */
-.nav-item:active, /* クリック時の色変更 */
-.nav-item:hover { /* ホバー時の色変更 */
-  color: #c05b24; /* アクティブ色 (赤) */
+.nav-item:hover,
+.nav-item:active,
+.nav-item.active {
+  color: #c05b24;
 }
-
 .nav-icon {
   width: 24px;
   height: 24px;
   margin-bottom: 2px;
+}
+
+/* スマホ対応 */
+@media(max-width: 768px) {
+  .container {
+    max-width: 95%;
+    padding: 10px;
+  }
+  /* 画像縮小 */
+  .profile-photo {
+    max-height: 180px;
+  }
+  .logo {
+    width: 250px;
+  }
+  .insta-posts .post-image,
+  .beats .beat img,
+  .merchandise .merch img {
+    width: 100px;
+    height: 100px;
+  }
+  .section h2 {
+    font-size: 20px;
+  }
+  .button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 }

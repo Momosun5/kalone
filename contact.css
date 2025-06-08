@@ -1,16 +1,15 @@
 @charset "UTF-8";
 
-
-
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: #000000;
   color: #fff;
-  min-height: 100vh; /*画面の高さに基づいて最低高さを設定*/
+  min-height: 100vh; /* 画面の高さに基づく最低高さ */
   box-sizing: border-box;
 }
 
+/* 通常のコンテナ設定（モバイル用） */
 .contact-container {
   max-width: 430px;
   margin: 0 auto;
@@ -18,6 +17,18 @@ body {
   background: #000000;
   padding-bottom: 80px;
 }
+
+/* PC版の横幅を画面いっぱいにしたい場合の設定 */
+@media (min-width: 769px) {
+  .contact-container {
+    width: 100%;       /* 横幅いっぱいに */
+    max-width: none;   /* 最大幅制限解除 */
+    margin: 0;         /* 外側の余白なしに */
+    padding: 20px;     /* 必要に応じて余白 */
+  }
+}
+
+/* ヘッダー */
 .contact-header {
   text-align: center;
   font-size: 22px;
@@ -25,11 +36,12 @@ body {
   margin: 22px 0 12px 0;
 }
 
+/* メイン内容 */
 .contact-main {
   padding: 0 18px 22px 18px;
 }
 
-.contact-main h2 {
+.contact-mainh2 {
   font-size: 20px;
   font-weight: bold;
   margin: 16px 0 10px 0;
@@ -89,6 +101,7 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
 .alt-contact-list {
   display: flex;
   flex-direction: column;
@@ -117,33 +130,54 @@ body {
   margin-left: 6px;
 }
 
-
+/* ナビゲーション部分 */
 .bottom-nav {
   display: flex;
   justify-content: space-around;
-  background-color: #333; /* ナビゲーションバーの背景色 */
+  background-color: #333;
   padding: 10px 0;
 }
 
+/* ナビアイテム */
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff; /* デフォルト色 (白) */
+  color: #fff; /* 白 */
   font-size: 12px;
   text-decoration: none;
   flex: 1;
-  transition: color 0.3s; /* スムーズな色の変更 */
+  transition: color 0.3s;
 }
-
-.nav-item.active, /* アクティブアイテム */
-.nav-item:active, /* クリック時の色変更 */
-.nav-item:hover { /* ホバー時の色変更 */
-  color: #c05b24; /* アクティブ色 (赤) */
+.nav-item.active,
+.nav-item:active,
+.nav-item:hover {
+  color: #c05b24; /* 赤色 */
 }
-
 .nav-icon {
   width: 24px;
   height: 24px;
   margin-bottom: 2px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .contact-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+  /* 画像縮小例（必要に応じて） */
+  /* 例：画像サイズ調整 */
+  /* 例：フォントサイズ調整なども */
+}
+
+/* PC版横幅拡張設定 */
+@media (min-width: 769px) {
+  .contact-container {
+    width: 100%;           /* 横幅いっぱいに */
+    max-width: none;       /* 制限解除 */
+    margin: 0;             /* 余白無し */
+    padding: 20px;         /* お好みで調整 */
+  }
+  /* 必要に応じて他の要素も調整 */
 }
